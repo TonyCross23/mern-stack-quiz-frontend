@@ -38,10 +38,10 @@ const Quiz = () => {
                                 </span>
                             </div>
                        )}
+                            {!loader && quiz.length < activeQuiz + 1 &&   <Summary quizCount={quiz.length} summary={summary} />}
+                     
 
-                       <Summary/>
-
-                         {!loader &&    (
+                         {!loader &&  quiz.length >= activeQuiz + 1  &&  (
                          <>
                          <span className='float-right badge badge-success'>{activeQuiz + 1}/{quiz.length}</span>
                             <h4 className='text-success'>{quiz[activeQuiz].questions}</h4>
